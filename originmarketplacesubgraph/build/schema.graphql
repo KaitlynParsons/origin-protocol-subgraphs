@@ -1,0 +1,128 @@
+type MarketplaceData @entity {
+  id: ID!
+  party: Bytes! # address
+  ipfsHash: Bytes! # bytes32
+}
+
+type AffiliateAdded @entity {
+  id: ID!
+  party: Bytes! # address
+  ipfsHash: Bytes! # bytes32
+}
+
+type AffiliateRemoved @entity {
+  id: ID!
+  party: Bytes! # address
+  ipfsHash: Bytes! # bytes32
+}
+
+type ListingCreated @entity {
+  id: ID!
+  party: Bytes! # address
+  listingID: BigInt! # uint256
+  ipfsHash: Bytes! # bytes32
+}
+
+type ListingUpdated @entity {
+  id: ID!
+  party: Bytes! # address
+  listingID: BigInt! # uint256
+  ipfsHash: Bytes! # bytes32
+}
+
+type ListingWithdrawn @entity {
+  id: ID!
+  party: Bytes! # address
+  listingID: BigInt! # uint256
+  ipfsHash: Bytes! # bytes32
+}
+
+type ListingArbitrated @entity {
+  id: ID!
+  party: Bytes! # address
+  listingID: BigInt! # uint256
+  ipfsHash: Bytes! # bytes32
+}
+
+type ListingData @entity {
+  id: ID!
+  party: Bytes! # address
+  listingID: BigInt! # uint256
+  ipfsHash: Bytes! # bytes32
+}
+
+type OfferCreated @entity {
+  id: ID!
+  party: Bytes! # address
+  listingID: BigInt! # uint256
+  offerID: BigInt! # uint256
+  ipfsHash: Bytes! # bytes32
+}
+
+type OfferAccepted @entity {
+  id: ID!
+  party: Bytes! # address
+  listingID: BigInt! # uint256
+  offerID: BigInt! # uint256
+  ipfsHash: Bytes! # bytes32
+}
+
+type OfferFinalized @entity {
+  id: ID!
+  party: Bytes! # address
+  listingID: BigInt! # uint256
+  offerID: BigInt! # uint256
+  ipfsHash: Bytes! # bytes32
+}
+
+type OfferWithdrawn @entity {
+  id: ID!
+  party: Bytes! # address
+  listingID: BigInt! # uint256
+  offerID: BigInt! # uint256
+  ipfsHash: Bytes! # bytes32
+}
+
+type OfferFundsAdded @entity {
+  id: ID!
+  party: Bytes! # address
+  listingID: BigInt! # uint256
+  offerID: BigInt! # uint256
+  ipfsHash: Bytes! # bytes32
+}
+
+type OfferDisputed @entity {
+  id: ID!
+  party: Bytes! # address
+  listingID: BigInt! # uint256
+  offerID: BigInt! # uint256
+  ipfsHash: Bytes! # bytes32
+}
+
+type OfferRuling @entity {
+  id: ID!
+  party: Bytes! # address
+  listingID: BigInt! # uint256
+  offerID: BigInt! # uint256
+  ipfsHash: Bytes! # bytes32
+  ruling: BigInt! # uint256
+}
+
+type OfferData @entity {
+  id: ID!
+  party: Bytes! # address
+  listingID: BigInt! # uint256
+  offerID: BigInt! # uint256
+  ipfsHash: Bytes! # bytes32
+}
+
+type OwnershipRenounced @entity {
+  id: ID!
+  previousOwner: Bytes! # address
+}
+
+type OwnershipTransferred @entity {
+  id: ID!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+}

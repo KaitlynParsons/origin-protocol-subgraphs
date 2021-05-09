@@ -1,0 +1,74 @@
+specVersion: 0.0.2
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: V01_Marketplace
+    network: mainnet
+    source:
+      address: "0x698ff47b84837d3971118a369c570172ee7e54c2"
+      abi: V01_Marketplace
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - MarketplaceData
+        - AffiliateAdded
+        - AffiliateRemoved
+        - ListingCreated
+        - ListingUpdated
+        - ListingWithdrawn
+        - ListingArbitrated
+        - ListingData
+        - OfferCreated
+        - OfferAccepted
+        - OfferFinalized
+        - OfferWithdrawn
+        - OfferFundsAdded
+        - OfferDisputed
+        - OfferRuling
+        - OfferData
+        - OwnershipRenounced
+        - OwnershipTransferred
+      abis:
+        - name: V01_Marketplace
+          file: V01_Marketplace\abis\V01_Marketplace.json
+      eventHandlers:
+        - event: MarketplaceData(indexed address,bytes32)
+          handler: handleMarketplaceData
+        - event: AffiliateAdded(indexed address,bytes32)
+          handler: handleAffiliateAdded
+        - event: AffiliateRemoved(indexed address,bytes32)
+          handler: handleAffiliateRemoved
+        - event: ListingCreated(indexed address,indexed uint256,bytes32)
+          handler: handleListingCreated
+        - event: ListingUpdated(indexed address,indexed uint256,bytes32)
+          handler: handleListingUpdated
+        - event: ListingWithdrawn(indexed address,indexed uint256,bytes32)
+          handler: handleListingWithdrawn
+        - event: ListingArbitrated(indexed address,indexed uint256,bytes32)
+          handler: handleListingArbitrated
+        - event: ListingData(indexed address,indexed uint256,bytes32)
+          handler: handleListingData
+        - event: OfferCreated(indexed address,indexed uint256,indexed uint256,bytes32)
+          handler: handleOfferCreated
+        - event: OfferAccepted(indexed address,indexed uint256,indexed uint256,bytes32)
+          handler: handleOfferAccepted
+        - event: OfferFinalized(indexed address,indexed uint256,indexed uint256,bytes32)
+          handler: handleOfferFinalized
+        - event: OfferWithdrawn(indexed address,indexed uint256,indexed uint256,bytes32)
+          handler: handleOfferWithdrawn
+        - event: OfferFundsAdded(indexed address,indexed uint256,indexed uint256,bytes32)
+          handler: handleOfferFundsAdded
+        - event: OfferDisputed(indexed address,indexed uint256,indexed uint256,bytes32)
+          handler: handleOfferDisputed
+        - event: OfferRuling(indexed address,indexed uint256,indexed uint256,bytes32,uint256)
+          handler: handleOfferRuling
+        - event: OfferData(indexed address,indexed uint256,indexed uint256,bytes32)
+          handler: handleOfferData
+        - event: OwnershipRenounced(indexed address)
+          handler: handleOwnershipRenounced
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+      file: V01_Marketplace\V01_Marketplace.wasm
