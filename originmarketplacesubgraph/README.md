@@ -3,8 +3,10 @@ Marketplace subgraph
 
 ## Builds
 - graph codegen
+- graph build
 
 ## Deploys
+- graph auth https://api.thegraph.com/deploy/ <ACCESS_TOKEN>
 - yarn deploy
 
 ## Links

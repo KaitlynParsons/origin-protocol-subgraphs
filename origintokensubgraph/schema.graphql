@@ -1,0 +1,75 @@
+type AddCallSpenderWhitelist @entity {
+  id: ID!
+  enabler: Bytes! # address
+  spender: Bytes! # address
+}
+
+type RemoveCallSpenderWhitelist @entity {
+  id: ID!
+  disabler: Bytes! # address
+  spender: Bytes! # address
+}
+
+type SetWhitelistExpiration @entity {
+  id: ID!
+  expiration: BigInt! # uint256
+}
+
+type AllowedTransactorAdded @entity {
+  id: ID!
+  sender: Bytes! # address
+}
+
+type AllowedTransactorRemoved @entity {
+  id: ID!
+  sender: Bytes! # address
+}
+
+type Pause @entity {
+  id: ID!
+}
+
+type Unpause @entity {
+  id: ID!
+}
+
+type Mint @entity {
+  id: ID!
+  to: Bytes! # address
+  amount: BigInt! # uint256
+}
+
+type MintFinished @entity {
+  id: ID!
+}
+
+type OwnershipRenounced @entity {
+  id: ID!
+  previousOwner: Bytes! # address
+}
+
+type OwnershipTransferred @entity {
+  id: ID!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+}
+
+type Burn @entity {
+  id: ID!
+  burner: Bytes! # address
+  value: BigInt! # uint256
+}
+
+type Approval @entity {
+  id: ID!
+  owner: Bytes! # address
+  spender: Bytes! # address
+  value: BigInt! # uint256
+}
+
+type Transfer @entity {
+  id: ID!
+  from: Bytes! # address
+  to: Bytes! # address
+  value: BigInt! # uint256
+}
