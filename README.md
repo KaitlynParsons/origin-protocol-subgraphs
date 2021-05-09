@@ -1,11 +1,5 @@
 # Origin Protocol Subgraphs
-Subgraphs of origin protocol smart contracts.
-
-## Builds
-- graph codegen
-
-## Deploys
-- yarn deploy
+Subgraphs for Origin Protocol smart contracts.
 
 ## Links
 - [OGN Smart Contracts](https://etherscan.io/accounts/label/origin-protocol)
