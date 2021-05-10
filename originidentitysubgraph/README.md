@@ -1,5 +1,5 @@
 # Origin Protocol Identity Subgraph
-Origin Token subgraph
+Origin Identity subgraph
 
 ## Builds
 - graph codegen
