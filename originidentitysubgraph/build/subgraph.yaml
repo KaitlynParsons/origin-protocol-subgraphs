@@ -1,0 +1,62 @@
+specVersion: 0.0.2
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: originidentity
+    network: mainnet
+    source:
+      address: "0x8207c1ffc5b6804f6024322ccf34f29c3541ae26"
+      abi: originidentity
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - AddCallSpenderWhitelist
+        - RemoveCallSpenderWhitelist
+        - SetWhitelistExpiration
+        - AllowedTransactorAdded
+        - AllowedTransactorRemoved
+        - Pause
+        - Unpause
+        - Mint
+        - MintFinished
+        - OwnershipRenounced
+        - OwnershipTransferred
+        - Burn
+        - Approval
+        - Transfer
+      abis:
+        - name: originidentity
+          file: originidentity\abis\originidentity.json
+      eventHandlers:
+        - event: AddCallSpenderWhitelist(address,address)
+          handler: handleAddCallSpenderWhitelist
+        - event: RemoveCallSpenderWhitelist(address,address)
+          handler: handleRemoveCallSpenderWhitelist
+        - event: SetWhitelistExpiration(uint256)
+          handler: handleSetWhitelistExpiration
+        - event: AllowedTransactorAdded(address)
+          handler: handleAllowedTransactorAdded
+        - event: AllowedTransactorRemoved(address)
+          handler: handleAllowedTransactorRemoved
+        - event: Pause()
+          handler: handlePause
+        - event: Unpause()
+          handler: handleUnpause
+        - event: Mint(indexed address,uint256)
+          handler: handleMint
+        - event: MintFinished()
+          handler: handleMintFinished
+        - event: OwnershipRenounced(indexed address)
+          handler: handleOwnershipRenounced
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: Burn(indexed address,uint256)
+          handler: handleBurn
+        - event: Approval(indexed address,indexed address,uint256)
+          handler: handleApproval
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: originidentity\originidentity.wasm
